@@ -1,4 +1,4 @@
-package com.example.helloworld
+package com.laba.calculator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

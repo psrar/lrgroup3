@@ -1,4 +1,4 @@
-package com.example.helloworld
+package com.laba.calculator
 
 import org.junit.Test
 
