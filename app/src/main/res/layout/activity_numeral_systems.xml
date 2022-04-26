@@ -177,10 +177,12 @@
                 style="@style/Button.ReadyGrey"
                 android:text="3" />
         </LinearLayout>
+
         <LinearLayout
             style="@style/CalculatorRow"
             android:id="@+id/fourthRow"
-            app:layout_constraintTop_toBottomOf="@+id/thirdRow">
+            app:layout_constraintTop_toBottomOf="@+id/thirdRow"
+            android:layout_marginHorizontal="0dp">
 
             <Button
                 android:id="@+id/calcButton0"
