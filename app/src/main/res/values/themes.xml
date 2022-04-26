@@ -14,11 +14,6 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Button.ReadyGrey" parent="">
-        <item name="android:textColor">@color/black</item>
-        <item name="backgroundTint">@color/ready_grey</item>
-    </style>
-
     <style name="Theme.HelloWorld.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
