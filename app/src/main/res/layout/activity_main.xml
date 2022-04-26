@@ -2,10 +2,317 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="0dp"
+        android:background="@color/dark_grey"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="40dp"
+            android:height="60dp"
+
+            android:fontFamily="sans-serif-black"
+            android:gravity="end|center_vertical"
+            android:paddingHorizontal="8dp"
+            android:text="20033002"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="40dp"
+
+            android:height="60dp"
+
+            android:fontFamily="sans-serif-black"
+            android:gravity="end|center_vertical"
+            android:paddingHorizontal="8dp"
+            android:text="20033002"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:translationY="-20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="0dp"
+        android:background="@color/dark_grey"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginTop="40dp"
+            android:divider="@drawable/width_divider"
+
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            android:weightSum="4">
+
+            <Button
+                style="@style/Button.ReadyGrey"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/roundedbutton"
+                android:text="@string/Сlear"
+                android:textColor="@color/white"
+                android:textSize="32sp" />
+
+            <Button
+                style="@style/Button.ReadyGrey"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/roundedbutton"
+                android:text="@string/DIV"
+                android:textColor="@color/white"
+                android:textSize="32sp" />
+
+            <Button
+                style="@style/Button.ReadyGrey"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/roundedbutton"
+                android:text="@string/MUL"
+                android:textColor="@color/white"
+                android:textSize="32sp" />
+
+            <Button
+                style="@style/Button.ReadyGrey"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/roundedbutton"
+                android:text="@string/Backspace"
+                android:textColor="@color/white"
+                android:textSize="32sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginTop="40dp"
+            android:divider="@drawable/width_divider"
+
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            android:weightSum="4">
+
+            <Button
+                style="@style/Button.ReadyGrey"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/roundedbutton"
+                android:text="@string/num7"
+                android:textColor="@color/white"
+                android:textSize="32sp" />
 
 
+            <Button
+                style="@style/Button.ReadyGrey"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/roundedbutton"
+                android:text="@string/num8"
+                android:textColor="@color/white"
+                android:textSize="32sp" />
+
+            <Button
+                style="@style/Button.ReadyGrey"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/roundedbutton"
+                android:text="@string/num9"
+                android:textColor="@color/white"
+                android:textSize="32sp" />
+
+            <Button
+                style="@style/Button.ReadyGrey"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/roundedbutton"
+                android:text="@string/SUB"
+                android:textColor="@color/white"
+                android:textSize="32sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginTop="40dp"
+            android:divider="@drawable/width_divider"
+
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            android:weightSum="4">
+
+            <Button
+                style="@style/Button.ReadyGrey"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/roundedbutton"
+                android:text="@string/num4"
+                android:textColor="@color/white"
+                android:textSize="32sp" />
+
+            <Button
+                style="@style/Button.ReadyGrey"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/roundedbutton"
+                android:text="@string/num5"
+                android:textColor="@color/white"
+                android:textSize="32sp" />
+
+            <Button
+                style="@style/Button.ReadyGrey"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/roundedbutton"
+                android:text="@string/num6"
+                android:textColor="@color/white"
+                android:textSize="32sp" />
+
+            <Button
+                style="@style/Button.ReadyGrey"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/roundedbutton"
+                android:text="@string/ADD"
+                android:textColor="@color/white"
+                android:textSize="32sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginTop="40dp"
+            android:divider="@drawable/width_divider"
+
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            android:weightSum="4">
+
+            <Button
+                style="@style/Button.ReadyGrey"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/roundedbutton"
+                android:text="@string/num1"
+                android:textColor="@color/white"
+                android:textSize="32sp" />
+
+            <Button
+                style="@style/Button.ReadyGrey"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/roundedbutton"
+                android:text="@string/num2"
+                android:textColor="@color/white"
+                android:textSize="32sp" />
+
+            <Button
+                style="@style/Button.ReadyGrey"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/roundedbutton"
+                android:text="@string/num3"
+                android:textColor="@color/white"
+                android:textSize="32sp" />
+
+            <Button
+                style="@style/Button.ReadyGrey"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/roundedbutton"
+                android:text="@string/doth"
+                android:textColor="@color/white"
+                android:textSize="32sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginTop="40dp"
+            android:divider="@drawable/width_divider"
+
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            android:weightSum="4">
+
+            <Button
+                style="@style/Button.ReadyGrey"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/roundedbutton"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="32sp" />
+
+            <Button
+                style="@style/Button.ReadyGrey"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/roundedbutton"
+                android:text="@string/num0"
+                android:textColor="@color/white"
+                android:textSize="32sp" />
+
+            <Button
+                style="@style/Button.ReadyGrey"
+                android:layout_width="140dp"
+                android:layout_height="70dp"
+                android:background="@drawable/roundedbutton"
+                android:text="@string/Result"
+                android:textColor="@color/white"
+                android:textSize="32sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
