@@ -14,6 +14,28 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="Button.ReadyGrey" parent="">
+        <item name="android:background">@drawable/roundedbutton</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundTint">@color/ready_grey</item>
+    </style>
+
+    <style name="Button.Blue" parent="">
+        <item name="android:background">@drawable/roundedbutton</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundTint">@color/neomorphism_blue</item>
+
+
+    </style>
+
+    <style name="Button.Gray.Text.Blue" parent="">
+        <item name="android:background">@drawable/roundedbutton</item>
+        <item name="android:textColor">@color/neomorphism_blue</item>
+        <item name="backgroundTint">@color/ready_grey</item>
+        <item name="android:shadowColor">@color/neomorphism_blue</item>
+        <item name="android:shadowRadius">35</item>
+    </style>
+
     <style name="Theme.HelloWorld.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
