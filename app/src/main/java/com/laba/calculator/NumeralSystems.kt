@@ -156,10 +156,10 @@ class NumeralSystems : AppCompatActivity() {
     }
 
     private fun appendNumber(n: Int) {
-        if (decInput.text.length < 9) {
+        var binStringCleared = binInput.text.replace(Regex(" "), "")
             when (radix) {
                 Radix.Decimal -> {
-                    if (n != -1) {
+                    if (n != -1 && decInput.text.length < 9) {
                         if (decInput.text.toString() == "0")
                             decInput.text = n.toString()
                         else
@@ -167,25 +167,24 @@ class NumeralSystems : AppCompatActivity() {
                     }
 
                     val decNumber = decInput.text.toString().toInt()
-                    binInput.text = Integer.toBinaryString(decNumber)
+                    binStringCleared = Integer.toBinaryString(decNumber)
                     hexInput.text = Integer.toHexString(decNumber)
                 }
                 Radix.Binary -> {
-                    if (n != -1) {
-                        if (binInput.text.toString() == "0")
-                            binInput.text = n.toString()
+                    if (n != -1 && decInput.text.length < 9) {
+                        if (binStringCleared == "0")
+                            binStringCleared = n.toString()
                         else {
-                            val s = binInput.text.toString() + n.toString()
-                            binInput.text = s
+                            binStringCleared += n.toString()
                         }
                     }
 
-                    val decNumber = Integer.parseInt(binInput.text.toString(), 2)
+                    val decNumber = Integer.parseInt(binStringCleared, 2)
                     decInput.text = decNumber.toString()
                     hexInput.text = Integer.toHexString(decNumber)
                 }
                 Radix.Hexadecimal -> {
-                    if (n != -1) {
+                    if (n != -1 && decInput.text.length < 9) {
                         if (n >= 10)
                             if (hexInput.text.toString() == "0")
                                 hexInput.text = hexValues[n - 10].toString()
@@ -200,12 +199,10 @@ class NumeralSystems : AppCompatActivity() {
 
                     val decNumber = Integer.parseInt(hexInput.text.toString(), 16)
                     decInput.text = decNumber.toString()
-                    binInput.text = Integer.toBinaryString(decNumber)
+                    binStringCleared = Integer.toBinaryString(decNumber)
                 }
             }
 
-            val bs = binInput.text.toString()
-            binInput.text = bs.chunked(4).joinToString(" ")
-        }
+            binInput.text = binStringCleared.chunked(4).joinToString(" ")
     }
 }
