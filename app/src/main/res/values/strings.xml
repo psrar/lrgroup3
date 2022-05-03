@@ -24,6 +24,13 @@
     <string name="num7">7</string>
     <string name="num8">8</string>
     <string name="num9">9</string>
+    <string name="numA">A</string>
+    <string name="numB">B</string>
+    <string name="numC">C</string>
+    <string name="numD">D</string>
+    <string name="numE">E</string>
+    <string name="numF">F</string>
+
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>
