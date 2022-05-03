@@ -8,6 +8,7 @@
     tools:context=".NumeralSystems">
 
     <LinearLayout
+        android:id="@+id/viewPanel"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@color/dark_grey"
@@ -41,8 +42,9 @@
             <TextView
                 android:id="@+id/decimalTextView"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_weight="10"
+                android:autoSizeTextType="uniform"
                 android:text="0"
                 android:textAlignment="textEnd"
                 android:textColor="@color/white"
@@ -75,8 +77,9 @@
             <TextView
                 android:id="@+id/binaryTextView"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_weight="10"
+                android:autoSizeTextType="uniform"
                 android:text="0"
                 android:textAlignment="textEnd"
                 android:textColor="@color/white"
@@ -86,7 +89,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/hexademicalLinearLayout"
+            android:id="@+id/hexadecimalLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -107,10 +110,11 @@
                 android:layout_weight="1" />
 
             <TextView
-                android:id="@+id/oct"
+                android:id="@+id/hexadecimalTextView"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_weight="10"
+                android:autoSizeTextType="uniform"
                 android:text="0"
                 android:textAlignment="textEnd"
                 android:textColor="@color/white"
@@ -127,7 +131,7 @@
         android:clipChildren="false"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/hexademicalLinearLayout">
+        app:layout_constraintTop_toBottomOf="@id/viewPanel">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -141,6 +145,7 @@
             android:showDividers="end|middle">
 
             <Button
+                android:id="@+id/buttonClear"
                 style="@style/Button.Gray.Text.Blue"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
@@ -148,6 +153,7 @@
                 android:textSize="32sp" />
 
             <Button
+                android:id="@+id/buttonBackspace"
                 style="@style/Button.Gray.Text.Blue"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
