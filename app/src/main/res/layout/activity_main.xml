@@ -63,7 +63,8 @@
             android:background="@color/ready_grey"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:clipChildren="false">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -74,8 +75,7 @@
 
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:showDividers="middle"
-                android:weightSum="4">
+                android:showDividers="middle">
 
                 <Button
                     style="@style/Button.Gray.Text.Blue"
@@ -106,7 +106,7 @@
                     style="@style/Button.Gray.Text.Blue"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    
+
                     android:text="@string/Backspace"
                    
                     android:textSize="32sp" />
@@ -122,8 +122,7 @@
 
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:showDividers="middle"
-                android:weightSum="4">
+                android:showDividers="middle">
 
                 <Button
                     style="@style/Button.ReadyGrey"
@@ -172,8 +171,7 @@
 
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:showDividers="middle"
-                android:weightSum="4">
+                android:showDividers="middle">
 
                 <Button
                     style="@style/Button.ReadyGrey"
@@ -222,8 +220,7 @@
 
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:showDividers="middle"
-                android:weightSum="4">
+                android:showDividers="middle">
 
                 <Button
                     style="@style/Button.ReadyGrey"
@@ -274,8 +271,7 @@
 
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:showDividers="middle"
-                android:weightSum="4">
+                android:showDividers="middle">
 
                 <Button
                     style="@style/Button.ReadyGrey"

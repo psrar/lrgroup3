@@ -1,5 +1,6 @@
 package com.laba.calculator
 
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
 import android.widget.LinearLayout
@@ -15,17 +16,17 @@ class NumeralSystems : AppCompatActivity() {
         var hexLinear = findViewById<LinearLayout>(R.id.hexademicalLinearLayout);
 
         decLinear.setOnClickListener {
-            decLinear.setBackgroundColor(R.color.neomorphism_blue.toInt());
+            decLinear.setBackgroundResource(R.color.neomorphism_blue);
             binLinear.setBackgroundColor(0);
             hexLinear.setBackgroundColor(0);
         }
         binLinear.setOnClickListener {
-            binLinear.setBackgroundColor(R.color.neomorphism_blue.toInt());
+            binLinear.setBackgroundResource(R.color.neomorphism_blue);
             decLinear.setBackgroundColor(0);
             hexLinear.setBackgroundColor(0);
         }
         hexLinear.setOnClickListener {
-            hexLinear.setBackgroundColor(R.color.neomorphism_blue.toInt());
+            hexLinear.setBackgroundResource(R.color.neomorphism_blue.toInt());
             binLinear.setBackgroundColor(0);
             decLinear.setBackgroundColor(0);
         }
