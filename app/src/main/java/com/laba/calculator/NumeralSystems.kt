@@ -13,7 +13,7 @@ class NumeralSystems : AppCompatActivity() {
         Decimal, Binary, Hexadecimal
     }
 
-    val hexValues = "ABCDEF"
+    private val hexValues = "ABCDEF"
 
     private var radix: Radix = Radix.Decimal
 
@@ -204,7 +204,7 @@ class NumeralSystems : AppCompatActivity() {
                 }
             }
 
-            var bs = binInput.text.toString()
+            val bs = binInput.text.toString()
             binInput.text = bs.chunked(4).joinToString(" ")
         }
     }
