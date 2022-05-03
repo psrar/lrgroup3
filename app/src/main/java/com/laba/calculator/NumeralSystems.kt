@@ -2,6 +2,7 @@ package com.laba.calculator
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
@@ -9,88 +10,33 @@ class NumeralSystems : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
-        var b = findViewById<Button>(R.id.calcButton0)
+        var decLinear = findViewById<LinearLayout>(R.id.decimalLinearLayout);
+        var binLinear = findViewById<LinearLayout>(R.id.binaryLinearLayout);
+        var hexLinear = findViewById<LinearLayout>(R.id.hexademicalLinearLayout);
+
+        decLinear.setOnClickListener {
+            decLinear.setBackgroundColor(R.color.neomorphism_blue.toInt());
+            binLinear.setBackgroundColor(0);
+            hexLinear.setBackgroundColor(0);
+        }
+        binLinear.setOnClickListener {
+            binLinear.setBackgroundColor(R.color.neomorphism_blue.toInt());
+            decLinear.setBackgroundColor(0);
+            hexLinear.setBackgroundColor(0);
+        }
+        hexLinear.setOnClickListener {
+            hexLinear.setBackgroundColor(R.color.neomorphism_blue.toInt());
+            binLinear.setBackgroundColor(0);
+            decLinear.setBackgroundColor(0);
+        }
+
+        var b = findViewById<Button>(R.id.num0)
         b.setOnClickListener {
             Toast.makeText(
                 this@NumeralSystems,
                 "it.toString()",
                 Toast.LENGTH_SHORT
             ).show()
-            b = findViewById<Button>(R.id.calcButton1)
-            b.setOnClickListener {
-                Toast.makeText(
-                    this,
-                    "1",
-                    Toast.LENGTH_SHORT
-                ).show()
-
-            }
-            b = findViewById<Button>(R.id.calcButton2)
-            b.setOnClickListener {
-                Toast.makeText(
-                    this,
-                    it.toString(),
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-            b = findViewById<Button>(R.id.calcButton3)
-            b.setOnClickListener {
-                Toast.makeText(
-                    this,
-                    it.toString(),
-                    Toast.LENGTH_SHORT
-                ).show()
-
-            }
-            b = findViewById<Button>(R.id.calcButton4)
-            b.setOnClickListener {
-                Toast.makeText(
-                    this,
-                    it.toString(),
-                    Toast.LENGTH_SHORT
-                ).show()
-
-            }
-            b = findViewById<Button>(R.id.calcButton5)
-            b.setOnClickListener {
-                Toast.makeText(
-                    this,
-                    it.toString(),
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-            b = findViewById<Button>(R.id.calcButton6)
-            b.setOnClickListener {
-                Toast.makeText(
-                    this,
-                    it.toString(),
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-            b = findViewById<Button>(R.id.calcButton7)
-            b.setOnClickListener {
-                Toast.makeText(
-                    this,
-                    it.toString(),
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-            b = findViewById<Button>(R.id.calcButton8)
-            b.setOnClickListener {
-                Toast.makeText(
-                    this,
-                    it.toString(),
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-            b = findViewById<Button>(R.id.calcButton9)
-            b.setOnClickListener {
-                Toast.makeText(
-                    this,
-                    0,
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
         }
     }
 
