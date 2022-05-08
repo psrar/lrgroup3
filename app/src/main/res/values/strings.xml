@@ -9,7 +9,7 @@
     <string name="SUB">-</string>
     <string name="ADD">+</string>
     <string name="Result">=</string>
-    <string name="doth">,</string>
+    <string name="doth">.</string>
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
@@ -19,6 +19,10 @@
     <string name="num2">2</string>
     <string name="num3">3</string>
     <string name="num4">4</string>
+    <string name="ruble">₽</string>
+    <string name="euro">€</string>
+    <string name="dollar">$</string>
+    <string name="pound">£</string>
     <string name="num5">5</string>
     <string name="num6">6</string>
     <string name="num7">7</string>

@@ -64,7 +64,6 @@ class NumeralSystems : AppCompatActivity() {
         binLinear.setOnClickListener {
             changeRadix(Radix.Binary)
         }
-
         hexLinear.setOnClickListener {
             changeRadix(Radix.Hexadecimal)
         }
