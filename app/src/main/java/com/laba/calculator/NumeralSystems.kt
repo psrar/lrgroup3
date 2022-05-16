@@ -130,28 +130,34 @@ class NumeralSystems : AppCompatActivity() {
     }
 
     private fun backspace() {
+        var z = 0
         when (radix) {
             Radix.Decimal -> {
                 if (decInput.text.length == 1)
                     decInput.text = "0"
                 else
                     decInput.text = decInput.text.substring(0, decInput.text.length - 1)
+                appendNumber(-1)
             }
             Radix.Binary -> {
                 if (binInput.text.length == 1)
                     binInput.text = "0"
                 else
                     binInput.text = binInput.text.substring(0, binInput.text.length - 1)
+/////////////////////////////////////БАГ 2///////////////////////////////////////////////////////////////////////////
+                //appendNumber(-1)...
             }
             Radix.Hexadecimal -> {
+//БАГ 3///////////////////////////////////////////////////////////////////////////////////////////////////////
                 if (hexInput.text.length == 1)
-                    hexInput.text = "0"
+                    hexInput.text = ""
+                else if (hexInput.text.isEmpty())
+                    z = z / z
                 else
                     hexInput.text = hexInput.text.substring(0, hexInput.text.length - 1)
+                appendNumber(-1)
             }
         }
-
-        appendNumber(-1)
     }
 
     private fun appendNumber(n: Int) {
@@ -195,8 +201,8 @@ class NumeralSystems : AppCompatActivity() {
                             else
                                 hexInput.append(n.toString())
                     }
-
-                    val decNumber = Integer.parseInt(hexInput.text.toString(), 16)
+//БАГ 1////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    val decNumber = Integer.parseInt(hexInput.text.toString(), 17)
                     decInput.text = decNumber.toString()
                     binStringCleared = Integer.toBinaryString(decNumber)
                 }
