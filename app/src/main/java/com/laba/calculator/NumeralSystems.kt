@@ -102,7 +102,7 @@ class NumeralSystems : AppCompatActivity() {
                     buttons[i].setTextColor(Color.WHITE)
                 }
                 for (i in 10..15) {
-                    buttons[i].isEnabled = false
+//                    buttons[i].isEnabled = false
                     buttons[i].setTextColor(Color.TRANSPARENT)
                 }
             }
@@ -112,7 +112,8 @@ class NumeralSystems : AppCompatActivity() {
                 decLinear.setBackgroundColor(0)
                 hexLinear.setBackgroundColor(0)
                 for (i in 2..15) {
-                    buttons[i].isEnabled = false
+//БАГ 4////////////////////////////////////////////////////////////////////////////////////////////////
+//                    buttons[i].isEnabled = false
                     buttons[i].setTextColor(Color.TRANSPARENT)
                 }
             }

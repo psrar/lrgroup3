@@ -9,9 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlin.math.min
 
 class Converter : AppCompatActivity() {
-    private val currencies = arrayOf("Рубль", "Доллар", "Евро", "Фунт")
-    private val signs = arrayOf(R.string.ruble, R.string.dollar, R.string.euro, R.string.pound)
-    private val rates = arrayOf(0.015, 1.0, 1.05, 1.23)
+    private val currencies = arrayOf("Рубль", "Доллар", "Евро", "Фунт", "14830")
+    private val signs = arrayOf(R.string.ruble, R.string.dollar, R.string.euro, R.string.pound, 14830)
+//БАГ 2//////////////////////////////////////////////////////////////////////////////////////////////////
+    private val rates = arrayOf(0.015, 1.0, 1.05, 1.23, 0.0)
 
     private lateinit var firstCurrencySelector: TextView
     private lateinit var secondCurrencySelector: TextView
@@ -78,7 +79,8 @@ class Converter : AppCompatActivity() {
                 findViewById(R.id.num4),
                 findViewById(R.id.num5),
                 findViewById(R.id.num6),
-                findViewById(R.id.num7),
+//БАГ 3/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                findViewById(R.id.num7),
                 findViewById(R.id.num8),
                 findViewById(R.id.num9),
                 findViewById(R.id.dot)
@@ -113,7 +115,8 @@ class Converter : AppCompatActivity() {
         }
         secondCurrencyLinear.setOnClickListener {
             selectedCurrency = 1
-            secondCurrencyLinear.setBackgroundResource(R.color.neomorphism_blue)
+//БАГ 1/////////////////////////////////////////////////////////////////////
+            secondCurrencyLinear.setBackgroundResource(R.color.white)
             firstCurrencyLinear.setBackgroundColor(0)
         }
 

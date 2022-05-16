@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var intent = Intent(this, Converter::class.java)
+        var intent = Intent(this, NumeralSystems::class.java)
         // start your next activity
         startActivity(intent)
     }
