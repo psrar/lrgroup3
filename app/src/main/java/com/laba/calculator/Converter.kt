@@ -93,11 +93,9 @@ class Converter : AppCompatActivity() {
                     appendNumber(10)
                 } else {
                     val t = b.text.toString().toInt()
-                        appendNumber(t)
+                    appendNumber(t)
                 }
             }
-
-
         }
 
         findViewById<Button>(R.id.buttonClear).setOnClickListener {
@@ -134,21 +132,21 @@ class Converter : AppCompatActivity() {
                 if (firstValue.text.length == 1) {
                     firstValue.text = "0"
                     secondValue.text = "0"
-                }
-                else {
+                } else {
                     firstValue.text = firstValue.text.substring(0, firstValue.text.length - 1)
-                            val fir = firstValue.text.toString().toDouble() * rates[firstRate] / rates[secondRate]
-                            secondValue.text = fir.toString()
-                    }
+                    val fir =
+                        firstValue.text.toString().toDouble() * rates[firstRate] / rates[secondRate]
+                    secondValue.text = fir.toString()
+                }
             }
             1 -> {
                 if (secondValue.text.length == 1) {
                     secondValue.text = "0"
                     firstValue.text = "0"
-                }
-                else {
+                } else {
                     secondValue.text = secondValue.text.substring(0, secondValue.text.length - 1)
-                    val fir = secondValue.text.toString().toDouble() * rates[firstRate] / rates[secondRate]
+                    val fir = secondValue.text.toString()
+                        .toDouble() * rates[firstRate] / rates[secondRate]
                     firstValue.text = fir.toString()
                 }
             }
@@ -162,7 +160,7 @@ class Converter : AppCompatActivity() {
             0 ->
                 if (n != -1 && firstValue.text.length < 9) {
                     if (n == 10) {
-                        if(!firstValue.text.toString().contains(".")) {
+                        if (!firstValue.text.toString().contains(".")) {
                             firstValue.append(".")
                             val sec =
                                 firstValue.text.toString().substring(0, firstValue.text.length - 1)
@@ -175,13 +173,13 @@ class Converter : AppCompatActivity() {
                         else
                             firstValue.append(n.toString())
 
-                        if(firstValue.text[firstValue.text.length - 1] == '.') {
+                        if (firstValue.text[firstValue.text.length - 1] == '.') {
                             secondValue.append(",")
-                            val fir = secondValue.text.toString().substring(0, secondValue.text.length - 1)
+                            val fir = secondValue.text.toString()
+                                .substring(0, secondValue.text.length - 1)
                                 .toDouble() * rates[firstRate] / rates[secondRate]
                             secondValue.text = fir.toString()
-                        }
-                        else {
+                        } else {
                             val sec = firstValue.text.toString()
                                 .toDouble() * rates[firstRate] / rates[secondRate]
                             secondValue.text = sec.toString()

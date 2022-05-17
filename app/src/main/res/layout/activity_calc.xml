@@ -5,8 +5,8 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    tools:context=".MainActivity"
+    tools:viewBindingIgnore="true">
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
@@ -22,19 +22,19 @@
         app:layout_constraintVertical_bias="1.0">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/math_operation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="40dp"
-            android:textColor="@color/white"
             android:height="60dp"
-
             android:fontFamily="sans-serif-black"
+
             android:gravity="end|center_vertical"
             android:paddingHorizontal="8dp"
-            android:text="20033002"
-            
+            android:text=""
+            android:textColor="@color/white"
+
             android:textSize="32sp"
             android:translationY="-20dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +42,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/result_operation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
@@ -52,7 +52,7 @@
             android:fontFamily="sans-serif-black"
             android:gravity="end|center_vertical"
             android:paddingHorizontal="8dp"
-            android:text="20033002"
+            android:text=""
          
             android:textSize="32sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -78,14 +78,17 @@
                 android:showDividers="middle">
 
                 <Button
+                    android:id="@+id/bt_cl"
                     style="@style/Button.Gray.Text.Blue"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:text="@string/Сlear"
-                   
+                    android:onClick="allClearAction"
                     android:textSize="32sp" />
 
                 <Button
+                    android:onClick="operationAction"
+                    android:id="@+id/bt_slash"
                     style="@style/Button.Gray.Text.Blue"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
@@ -94,6 +97,8 @@
                     android:textSize="32sp" />
 
                 <Button
+                    android:onClick="operationAction"
+                    android:id="@+id/bt_mul"
                     style="@style/Button.Gray.Text.Blue"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
@@ -103,12 +108,14 @@
                     android:textSize="32sp" />
 
                 <Button
+
+                    android:id="@+id/bt_backspace"
                     style="@style/Button.Gray.Text.Blue"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
 
                     android:text="@string/Backspace"
-                   
+                    android:onClick="backSpaceAction"
                     android:textSize="32sp" />
 
             </LinearLayout>
@@ -125,6 +132,8 @@
                 android:showDividers="middle">
 
                 <Button
+                    android:onClick="numberAction"
+                    android:id="@+id/bt_num7"
                     style="@style/Button.ReadyGrey"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
@@ -135,6 +144,8 @@
 
 
                 <Button
+                    android:onClick="numberAction"
+                    android:id="@+id/bt_num8"
                     style="@style/Button.ReadyGrey"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
@@ -144,6 +155,8 @@
                     android:textSize="32sp" />
 
                 <Button
+                    android:onClick="numberAction"
+                    android:id="@+id/bt_num9"
                     style="@style/Button.ReadyGrey"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
@@ -153,6 +166,8 @@
                     android:textSize="32sp" />
 
                 <Button
+                    android:onClick="operationAction"
+                    android:id="@+id/bt_sub"
                     style="@style/Button.Gray.Text.Blue"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
@@ -174,6 +189,8 @@
                 android:showDividers="middle">
 
                 <Button
+                    android:onClick="numberAction"
+                    android:id="@+id/bt_num4"
                     style="@style/Button.ReadyGrey"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
@@ -183,6 +200,8 @@
                     android:textSize="32sp" />
 
                 <Button
+                    android:onClick="numberAction"
+                    android:id="@+id/bt_num5"
                     style="@style/Button.ReadyGrey"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
@@ -192,6 +211,8 @@
                     android:textSize="32sp" />
 
                 <Button
+                    android:onClick="numberAction"
+                    android:id="@+id/bt_num6"
                     style="@style/Button.ReadyGrey"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
@@ -201,6 +222,7 @@
                     android:textSize="32sp" />
 
                 <Button
+                    android:onClick="operationAction"
                     style="@style/Button.Gray.Text.Blue"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
@@ -223,6 +245,8 @@
                 android:showDividers="middle">
 
                 <Button
+                    android:onClick="numberAction"
+                    android:id="@+id/bt_num1"
                     style="@style/Button.ReadyGrey"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
@@ -232,6 +256,8 @@
                     android:textSize="32sp" />
 
                 <Button
+                    android:onClick="numberAction"
+                    android:id="@+id/bt_num2"
                     style="@style/Button.ReadyGrey"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
@@ -241,6 +267,8 @@
                     android:textSize="32sp" />
 
                 <Button
+                    android:onClick="numberAction"
+                    android:id="@+id/bt_num3"
                     style="@style/Button.ReadyGrey"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
@@ -250,6 +278,8 @@
                     android:textSize="32sp" />
 
                 <Button
+                    android:onClick="numberAction"
+                    android:id="@+id/bt_doth"
                     style="@style/Button.ReadyGrey"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
@@ -274,15 +304,18 @@
                 android:showDividers="middle">
 
                 <Button
+                    android:id="@+id/bt_change"
                     style="@style/Button.ReadyGrey"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     
-                    android:text=""
+                    android:text="❏"
                  
                     android:textSize="32sp" />
 
                 <Button
+                    android:onClick="numberAction"
+                    android:id="@+id/bt_num0"
                     style="@style/Button.ReadyGrey"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
@@ -292,11 +325,11 @@
                     android:textSize="32sp" />
 
                 <Button
-
+                    android:id="@+id/bt_equal"
                     style="@style/Button.Blue"
                     android:layout_width="140dp"
                     android:layout_height="70dp"
-                    
+                    android:onClick="equalsAction"
                     android:text="@string/Result"
                  
                     android:textSize="32sp" />
