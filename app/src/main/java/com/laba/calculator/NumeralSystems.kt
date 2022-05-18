@@ -1,5 +1,6 @@
 package com.laba.calculator
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
@@ -12,6 +13,8 @@ class NumeralSystems : AppCompatActivity() {
     enum class Radix {
         Decimal, Binary, Hexadecimal
     }
+
+    private val calcTypes = arrayOf("Калькулятор", "Конвертер", "Преобразователь С/С");
 
     private val hexValues = "ABCDEF"
 
@@ -29,6 +32,33 @@ class NumeralSystems : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+
+        findViewById<Button>(R.id.bt_change).setOnClickListener{
+            val mb = android.app.AlertDialog.Builder(this)
+            mb.setTitle("Выберите валюту")
+            mb.setSingleChoiceItems(calcTypes, 2) { dialog, i ->
+                run {
+                    when (i) {
+                        1 -> {
+                            val intent = Intent(this, Converter::class.java)
+                            // start your next activity
+                            startActivity(intent)
+//                            finishAffinity()
+                        }
+                        0 -> {
+                            val intent = Intent(this, MainActivity::class.java)
+                            // start your next activity
+                            startActivity(intent)
+//                            finishAffinity()
+                        }
+                    }
+                    dialog.cancel()
+                }
+            }
+
+            mb.setNeutralButton("Отмена") { dialog, _ -> dialog.cancel() }
+            mb.create().show()
+        }
 
         decLinear = findViewById(R.id.decimalLinearLayout)
         binLinear = findViewById(R.id.binaryLinearLayout)

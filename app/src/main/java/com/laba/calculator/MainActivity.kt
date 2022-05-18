@@ -2,7 +2,7 @@ package com.laba.calculator
 
 
 
-import android.content.DialogInterface
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -16,32 +16,37 @@ class MainActivity : AppCompatActivity() {
     private var canAddOperation = false
     private var isDecimal = true
 
+    private val calcTypes = arrayOf("Калькулятор", "Конвертер", "Преобразователь С/С");
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calc)
         bt_change.setOnClickListener{
-            val dialogBuilder = AlertDialog.Builder(this)
+            val mb = android.app.AlertDialog.Builder(this)
+            mb.setTitle("Выберите валюту")
+            mb.setSingleChoiceItems(calcTypes, 0) { dialog, i ->
+                run {
+                    when (i) {
+                        1 -> {
+                            val intent = Intent(this, Converter::class.java)
+                            // start your next activity
+                            startActivity(intent)
+/////////////БАГ N//////////////////////////////////////////////////////////////////////////////////////
+//                            finishAffinity()
+                        }
+                        2 -> {
+                            val intent = Intent(this, NumeralSystems::class.java)
+                            // start your next activity
+                            startActivity(intent)
+//                            finishAffinity()
+                        }
+                    }
+                    dialog.cancel()
+                }
+            }
 
-            // set message of alert dialog
-            dialogBuilder.setMessage("Вы хотите сменить калькулятор")
-                // if the dialog is cancelable
-                .setCancelable(false)
-                // positive button text and action
-                .setPositiveButton("Конвет", DialogInterface.OnClickListener {
-                        dialog, id -> finish()
-                })
-                // negative button text and action
-                .setNegativeButton("Отмена", DialogInterface.OnClickListener {
-                        dialog, id -> dialog.cancel()
-                })
-
-            // create dialog box
-            val alert = dialogBuilder.create()
-            // set title for alert dialog box
-            alert.setTitle("AlertDialogExample")
-            // show alert dialog
-            alert.show()
+            mb.setNeutralButton("Отмена") { dialog, _ -> dialog.cancel() }
+            mb.create().show()
         }
     }
 

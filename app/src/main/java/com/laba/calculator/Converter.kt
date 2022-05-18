@@ -1,6 +1,7 @@
 package com.laba.calculator
 
 import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.LinearLayout
@@ -9,10 +10,12 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlin.math.min
 
 class Converter : AppCompatActivity() {
-    private val currencies = arrayOf("Рубль", "Доллар", "Евро", "Фунт", "14830")
-    private val signs = arrayOf(R.string.ruble, R.string.dollar, R.string.euro, R.string.pound, 14830)
+    private val currencies = arrayOf("Рубль", "Доллар", "Евро", "Фунт", "Арабская лигатура Джаллаялалоуху", "Биткоин")
+    private val signs = arrayOf(R.string.ruble, R.string.dollar, R.string.euro, R.string.pound, R.string.jaja, R.string.bitcoin)
 //БАГ 2//////////////////////////////////////////////////////////////////////////////////////////////////
-    private val rates = arrayOf(0.015, 1.0, 1.05, 1.23, 0.0)
+    private val rates = arrayOf(0.015, 1.0, 1.05, 1.23, 0.0, 990000000000000.0)
+
+    private val calcTypes = arrayOf("Калькулятор", "Конвертер", "Преобразователь С/С");
 
     private lateinit var firstCurrencySelector: TextView
     private lateinit var secondCurrencySelector: TextView
@@ -32,6 +35,33 @@ class Converter : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+
+        findViewById<Button>(R.id.bt_change).setOnClickListener{
+            val mb = android.app.AlertDialog.Builder(this)
+            mb.setTitle("Выберите валюту")
+            mb.setSingleChoiceItems(calcTypes, 1) { dialog, i ->
+                run {
+                    when (i) {
+                        0 -> {
+                            val intent = Intent(this, MainActivity::class.java)
+                            // start your next activity
+                            startActivity(intent)
+//                            finishAffinity()
+                        }
+                        2 -> {
+                            val intent = Intent(this, NumeralSystems::class.java)
+                            // start your next activity
+                            startActivity(intent)
+//                            finishAffinity()
+                        }
+                    }
+                    dialog.cancel()
+                }
+            }
+
+            mb.setNeutralButton("Отмена") { dialog, _ -> dialog.cancel() }
+            mb.create().show()
+        }
 
         firstCurrencySelector = findViewById(R.id.firstCurrencySelector)
         firstValue = findViewById(R.id.firstCurrencyTextView)

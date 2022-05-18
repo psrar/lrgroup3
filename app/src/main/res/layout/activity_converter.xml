@@ -272,6 +272,8 @@
             android:showDividers="beginning|middle">
 
             <Button
+                android:id="@+id/bt_change"
+
                 style="@style/Button.ReadyGrey"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
