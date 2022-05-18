@@ -1,11 +1,14 @@
 package com.laba.calculator
 
 
-import android.annotation.SuppressLint
+
+import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+
+import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_calc.*
 
 
@@ -17,19 +20,33 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calc)
-    }
+        bt_change.setOnClickListener{
+            val dialogBuilder = AlertDialog.Builder(this)
 
+            // set message of alert dialog
+            dialogBuilder.setMessage("Вы хотите сменить калькулятор")
+                // if the dialog is cancelable
+                .setCancelable(false)
+                // positive button text and action
+                .setPositiveButton("Конвет", DialogInterface.OnClickListener {
+                        dialog, id -> finish()
+                })
+                // negative button text and action
+                .setNegativeButton("Отмена", DialogInterface.OnClickListener {
+                        dialog, id -> dialog.cancel()
+                })
 
-    fun changeScene(view: View) {
-        if (view is Button) {
-            if (view.text == "❏") {
-                val myDialogFragment = MyDialogFragment()
-                val manager = supportFragmentManager
-                myDialogFragment.show(manager, "myDialog")
-
-            }
+            // create dialog box
+            val alert = dialogBuilder.create()
+            // set title for alert dialog box
+            alert.setTitle("AlertDialogExample")
+            // show alert dialog
+            alert.show()
         }
     }
+
+
+
 
     fun numberAction(view: View) {
         if (view is Button) {

@@ -60,6 +60,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
+
             android:background="@color/ready_grey"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -304,6 +305,7 @@
                 android:showDividers="middle">
 
                 <Button
+
                     android:id="@+id/bt_change"
                     style="@style/Button.ReadyGrey"
                     android:layout_width="70dp"
